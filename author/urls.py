@@ -1,14 +1,6 @@
-from django.urls import path, include
-from rest_framework.routers import DefaultRouter
+from django.urls import path
 
 from author.views import AuthorViewSet
-
-# router = DefaultRouter()
-# router.register(r'authors', AuthorViewSet, basename='author')
-#
-# urlpatterns = [
-#     path('', include(router.urls)),
-# ]
 
 app_name = "author"
 
@@ -24,6 +16,6 @@ author_detail = AuthorViewSet.as_view(
 )
 
 urlpatterns = [
-    path("actors/", author_list, name="actor_list"),
-    path("actors/<int:pk>/", author_detail, name="actor_detail"),
+    path("actors/", author_list, name="manage-list"),
+    path("actors/<int:pk>/", author_detail, name="manage-detail"),
 ]
